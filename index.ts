@@ -28,7 +28,7 @@ const program = new Command();
 
 program
   .name("quickSubmit")
-  .version("v1.5.4")
+  .version("v1.5.6")
   .argument("[file]", "File to submit", "main.cpp")
   .option(
     "-p, --pid <number>",
