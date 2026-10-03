@@ -28,7 +28,7 @@ const program = new Command();
 
 program
   .name("quickSubmit")
-  .version("v1.5.1")
+  .version("v1.5.4")
   .argument("[file]", "File to submit", "main.cpp")
   .option(
     "-p, --pid <number>",
@@ -97,7 +97,8 @@ program
           "Cookie": "PHPSESSID=" + PHPSESSID,
         },
         "referrer": "https://www.xmoj.tech/loginpage.php",
-        "body": "user_id=zhuchenrui2&password=" +
+        "body": "user_id=" + encodeURIComponent(config.username) +
+          "&password=" +
           MD5(config.password).toString() + "&submit=&csrf=" + csrf,
         "method": "POST",
         "mode": "cors",
